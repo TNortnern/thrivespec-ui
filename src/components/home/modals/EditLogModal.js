@@ -22,6 +22,7 @@ import {
 } from 'native-base';
 import { AntDesign } from '@expo/vector-icons';
 import { Button, CheckBox } from 'react-native-elements';
+import { layout } from '../../../assets/styles';
 
 const EditLogModal = ({ editLogModal, setEditLogModal }) => {
   return (
@@ -47,6 +48,13 @@ const EditLogModal = ({ editLogModal, setEditLogModal }) => {
             onPress={() => setEditLogModal(false)}
           />
         </Header>
+        <View style={layout.container}>
+          <Text style={{ fontSize: 24 }}>Sunday 24 September</Text>
+          <Text style={{ fontSize: 24 }}>Sunday 24 September</Text>
+          <Text style={{ fontSize: 24 }}>Sunday 24 September</Text>
+          <Text style={{ fontSize: 24 }}>Sunday 24 September</Text>
+          <Text style={{ fontSize: 24 }}>Sunday 24 September</Text>
+        </View>
       </Modal>
     </View>
   );

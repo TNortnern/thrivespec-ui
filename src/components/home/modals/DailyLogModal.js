@@ -8,26 +8,15 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { Divider } from 'react-native-elements';
-import {
-  Container,
-  Content,
-  H1,
-  Header,
-  Title,
-  Left,
-  Right,
-  Body,
-  Radio,
-  ListItem,
-} from 'native-base';
+import { H1, Header, Title, Left, Right, Radio, ListItem } from 'native-base';
 import { AntDesign } from '@expo/vector-icons';
 import { Button, CheckBox } from 'react-native-elements';
 import EditLogModal from './EditLogModal';
+import { layout } from '../../../assets/styles';
 
 const DailyLogModal = ({ modalOpen, setModalOpen }) => {
   const [yesIsChecked, setYesIsChecked] = useState(false);
   const [noIsChecked, setNoIsChecked] = useState(false);
-
   const [editLogModal, setEditLogModal] = useState(false);
 
   const radioYes = () => {
@@ -62,57 +51,68 @@ const DailyLogModal = ({ modalOpen, setModalOpen }) => {
             onPress={() => setModalOpen(false)}
           />
         </Header>
-        <View>
-          <H1>Today</H1>
-          <Text>Did you eat meat?</Text>
+        <View style={layout.container}>
+          <H1 style={{ fontWeight: 'bold' }}>Today</H1>
+          <Text style={{ fontSize: 20 }}>Did you eat meat?</Text>
 
-          <ListItem onPress={() => radioYes()}>
+          <TouchableOpacity
+            style={{
+              marginTop: 15,
+              flexDirection: 'row',
+            }}
+            onPress={() => radioYes()}
+          >
             <Radio
-              style={{ marginRight: 10 }}
+              style={{ marginRight: 15 }}
               color='orange'
               selected={yesIsChecked}
               onPress={() => radioYes()}
             />
-            <Text>Yes</Text>
-          </ListItem>
+            <Text style={{ fontSize: 20 }}>Yes</Text>
+          </TouchableOpacity>
 
-          <ListItem onPress={() => radioNo()}>
+          <TouchableOpacity
+            style={{
+              flexDirection: 'row',
+            }}
+            onPress={() => radioNo()}
+          >
             <Radio
-              style={{ marginRight: 10 }}
+              style={{ marginRight: 15 }}
               color='orange'
               selected={noIsChecked}
               onPress={() => radioNo()}
             />
-            <Text>No</Text>
-          </ListItem>
-        </View>
-
-        <EditLogModal
-          editLogModal={editLogModal}
-          setEditLogModal={setEditLogModal}
-        />
-
-        <View style={{ marginTop: 200 }}>
-          <Divider />
-          <TouchableOpacity
-            style={{
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              flexDirection: 'row',
-              paddingTop: 10,
-              paddingBottom: 10,
-            }}
-            onPress={() => {
-              setEditLogModal(true);
-              console.log(true);
-            }}
-          >
-            <Text style={{ fontSize: 24, flexWrap: 'nowrap' }}>
-              Edit Previous Logs
-            </Text>
-
-            <AntDesign name='right' size={24} color='black' />
+            <Text style={{ fontSize: 20 }}>No</Text>
           </TouchableOpacity>
+
+          <EditLogModal
+            editLogModal={editLogModal}
+            setEditLogModal={setEditLogModal}
+          />
+
+          <View style={{ marginTop: 200 }}>
+            <Divider />
+            <TouchableOpacity
+              style={{
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                flexDirection: 'row',
+                paddingTop: 10,
+                paddingBottom: 10,
+              }}
+              onPress={() => {
+                setEditLogModal(true);
+                console.log(true);
+              }}
+            >
+              <Text style={{ fontSize: 24, flexWrap: 'nowrap' }}>
+                Edit Previous Logs
+              </Text>
+
+              <AntDesign name='right' size={24} color='black' />
+            </TouchableOpacity>
+          </View>
         </View>
       </Modal>
     </View>
