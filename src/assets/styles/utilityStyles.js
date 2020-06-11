@@ -1,5 +1,5 @@
 export default {
   w100: {
-    width: "100%",
+    width: '100%',
   },
 };

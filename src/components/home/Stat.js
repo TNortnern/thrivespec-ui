@@ -1,8 +1,7 @@
-import React from "react";
-import { View } from "react-native";
-import { Text, H2 } from "native-base";
+import React from 'react';
+import { View } from 'react-native';
+import { Text, H2 } from 'native-base';
 import propTypes from 'prop-types';
-
 
 const Stat = ({ name, amount }) => {
   return (
@@ -10,12 +9,12 @@ const Stat = ({ name, amount }) => {
       <Text>{name} </Text>
       <View
         style={{
-          flexDirection: "row",
-          alignItems: "flex-end",
-          justifyContent: "center",
+          flexDirection: 'row',
+          alignItems: 'flex-end',
+          justifyContent: 'center',
         }}
       >
-        <H2 style={{ marginTop: 5, fontWeight: "bold" }}>{amount}</H2>
+        <H2 style={{ marginTop: 5, fontWeight: 'bold' }}>{amount}</H2>
         <Text style={{ fontSize: 20 }}>d</Text>
       </View>
     </View>
