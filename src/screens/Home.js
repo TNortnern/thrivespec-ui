@@ -1,5 +1,12 @@
-import React, { useState } from 'react';
-import { View, ScrollView, Text, Modal, StyleSheet, StatusBar } from 'react-native';
+import React, { useState } from "react";
+import {
+  View,
+  ScrollView,
+  Text,
+  Modal,
+  StyleSheet,
+  StatusBar,
+} from "react-native";
 import {
   Container,
   Content,
@@ -9,27 +16,27 @@ import {
   Left,
   Right,
   Body,
-} from 'native-base';
-import { Button } from 'react-native-elements';
-import { layout, colors, utility } from '../assets/styles';
-import { Entypo } from '@expo/vector-icons';
-import Stats from '../components/home/Stats';
-import Statistics from '../components/home/Statistics';
-import WeeklyGoal from '../components/home/WeeklyGoal';
-import propTypes from 'prop-types';
-import PageTitle from '../components/misc/PageTitle';
-import DailyLogModal from '../components/home/modals/DailyLogModal';
+} from "native-base";
+import { Button } from "react-native-elements";
+import { layout, colors, utility } from "../assets/styles";
+import { Entypo } from "@expo/vector-icons";
+import Stats from "../components/home/Stats";
+import Statistics from "../components/home/Statistics";
+import WeeklyGoal from "../components/home/WeeklyGoal";
+import propTypes from "prop-types";
+import PageTitle from "../components/misc/PageTitle";
+import DailyLogModal from "../components/home/modals/DailyLogModal";
+import Wrapper from "../components/misc/Wrapper";
 
 const Home = ({ navigation }) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <>
+    <Wrapper>
       <DailyLogModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
-
-      <ScrollView style={{ ...layout.container, paddingTop: StatusBar.currentHeight }}>
+      <ScrollView style={layout.container}>
         <Content>
-          <PageTitle title='Hi Michelle' />
+          <PageTitle title="Hi Michelle" />
           <Stats />
           <WeeklyGoal />
           <Statistics />
@@ -38,22 +45,22 @@ const Home = ({ navigation }) => {
       <View style={styles.btnContainer}>
         <Button
           onPress={() => setModalOpen(true)}
-          icon={<Entypo name='plus' size={24} color='white' />}
+          icon={<Entypo name="plus" size={24} color="white" />}
           titleStyle={{ marginLeft: 10 }}
-          title='LOG'
+          title="LOG"
           buttonStyle={styles.logBtn}
         />
       </View>
-    </>
+    </Wrapper>
   );
 };
 
 const styles = StyleSheet.create({
   btnContainer: {
-    alignItems: 'flex-end',
+    alignItems: "flex-end",
     ...utility.w100,
-    backgroundColor: 'rgba(0, 0, 0, 0)',
-    position: 'absolute',
+    backgroundColor: "rgba(0, 0, 0, 0)",
+    position: "absolute",
     bottom: 5,
   },
   logBtn: {

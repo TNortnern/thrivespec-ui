@@ -10,7 +10,7 @@ const TextCTA = ({ title, cta }) => {
   return (
     <View style={{ ...layout.fullFlexRow, marginTop: 19, marginBottom: 12 }}>
       <H2 style={{ fontWeight: "bold" }}>{title}</H2>
-      <Text onPress={() => cta.action} style={{ ...colors.gray, fontSize: 19 }}>
+      <Text onPress={() => cta.action} style={{ color: colors.gray, fontSize: 19 }}>
         {cta.name}
       </Text>
     </View>

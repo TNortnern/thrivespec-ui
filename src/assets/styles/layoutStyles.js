@@ -15,4 +15,9 @@ export default {
     justifyContent: 'space-between',
     width: '100%',
   },
+  droidSafeArea: {
+      flex: 1,
+      paddingTop: Platform.OS === 'android' ? 25 : 0
+  },
+
 };
