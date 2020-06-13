@@ -8,6 +8,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MyGroups from "./src/screens/MyGroups";
 import Recipes from "./src/screens/Recipes";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+
 const Tab = createBottomTabNavigator();
 
 
@@ -20,50 +22,52 @@ export default function App() {
   const renderer = () => {
     if (!loaded) return <Text>Loading...</Text>;
     return (
-      <NavigationContainer>
-        <Tab.Navigator>
-          <Tab.Screen
-            name="Home"
-            component={Home}
-            options={{
-              tabBarLabel: "Achievements",
-              tabBarIcon: ({ color, size }) => (
-                <Entypo name="plus" size={size} color={color} />
-              ),
-            }}
-          />
-          <Tab.Screen
-            name="MyGroups"
-            component={MyGroups}
-            options={{
-              tabBarLabel: "My Groups",
-              tabBarIcon: ({ color, size }) => (
-                <Entypo name="plus" size={size} color={color} />
-              ),
-            }}
-          />
-          <Tab.Screen
-            name="Recipes"
-            component={Recipes}
-            options={{
-              tabBarLabel: "Recipes",
-              tabBarIcon: ({ color, size }) => (
-                <Entypo name="plus" size={size} color={color} />
-              ),
-            }}
-          />
-          <Tab.Screen
-            name="Account"
-            component={Account}
-            options={{
-              tabBarLabel: "Account",
-              tabBarIcon: ({ color, size }) => (
-                <Entypo name="plus" size={size} color={color} />
-              ),
-            }}
-          />
-        </Tab.Navigator>
-      </NavigationContainer>
+      <SafeAreaProvider>
+        <NavigationContainer>
+          <Tab.Navigator>
+            <Tab.Screen
+              name="Home"
+              component={Home}
+              options={{
+                tabBarLabel: "Achievements",
+                tabBarIcon: ({ color, size }) => (
+                  <Entypo name="plus" size={size} color={color} />
+                ),
+              }}
+            />
+            <Tab.Screen
+              name="MyGroups"
+              component={MyGroups}
+              options={{
+                tabBarLabel: "My Groups",
+                tabBarIcon: ({ color, size }) => (
+                  <Entypo name="plus" size={size} color={color} />
+                ),
+              }}
+            />
+            <Tab.Screen
+              name="Recipes"
+              component={Recipes}
+              options={{
+                tabBarLabel: "Recipes",
+                tabBarIcon: ({ color, size }) => (
+                  <Entypo name="plus" size={size} color={color} />
+                ),
+              }}
+            />
+            <Tab.Screen
+              name="Account"
+              component={Account}
+              options={{
+                tabBarLabel: "Account",
+                tabBarIcon: ({ color, size }) => (
+                  <Entypo name="plus" size={size} color={color} />
+                ),
+              }}
+            />
+          </Tab.Navigator>
+        </NavigationContainer>
+      </SafeAreaProvider>
     );
   };
   const loadFont = async () => {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, ScrollView, Text, Modal, StyleSheet } from 'react-native';
+import { View, ScrollView, Text, Modal, StyleSheet, StatusBar } from 'react-native';
 import {
   Container,
   Content,
@@ -27,7 +27,7 @@ const Home = ({ navigation }) => {
     <>
       <DailyLogModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
 
-      <ScrollView style={layout.container}>
+      <ScrollView style={{ ...layout.container, paddingTop: StatusBar.currentHeight }}>
         <Content>
           <PageTitle title='Hi Michelle' />
           <Stats />
