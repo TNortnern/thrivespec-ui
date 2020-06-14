@@ -7,7 +7,7 @@ import Stat from './Stat';
 const Stats = () => {
   return (
     <Card style={{ paddingHorizontal: 20 }}>
-      <CardItem>
+      <CardItem bordered>
         <Body>
           <View style={styles.cardRow}>
             <Stat name='Meat-Free Total' amount={216} />

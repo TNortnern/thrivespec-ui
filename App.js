@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import * as Font from "expo-font";
-import { Ionicons, Entypo } from "@expo/vector-icons";
+import { Ionicons, Entypo, FontAwesome5, MaterialIcons, Foundation } from "@expo/vector-icons";
 import Home from "./src/screens/Home";
 import { Text } from "native-base";
 import "react-native-gesture-handler";
@@ -34,7 +34,7 @@ export default function App() {
                 options={{
                   tabBarLabel: "Achievements",
                   tabBarIcon: ({ color, size }) => (
-                    <Entypo name="plus" size={size} color={color} />
+                    <FontAwesome5 name="medal" size={size} color={color} />
                   ),
                 }}
               />
@@ -44,7 +44,7 @@ export default function App() {
                 options={{
                   tabBarLabel: "My Groups",
                   tabBarIcon: ({ color, size }) => (
-                    <Entypo name="plus" size={size} color={color} />
+                    <MaterialIcons name="people" size={size} color={color} />
                   ),
                 }}
               />
@@ -54,7 +54,7 @@ export default function App() {
                 options={{
                   tabBarLabel: "Recipes",
                   tabBarIcon: ({ color, size }) => (
-                    <Entypo name="plus" size={size} color={color} />
+                    <Foundation name="page-copy" size={size} color={color} />
                   ),
                 }}
               />
@@ -64,7 +64,7 @@ export default function App() {
                 options={{
                   tabBarLabel: "Account",
                   tabBarIcon: ({ color, size }) => (
-                    <Entypo name="plus" size={size} color={color} />
+                    <MaterialIcons name="person" size={size} color={color} />
                   ),
                 }}
               />

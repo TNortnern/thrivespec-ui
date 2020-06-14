@@ -16,7 +16,7 @@ const GroupCard = ({ group }) => {
             <SimpleLineIcons name="options" size={24} color="black" />
           </View>
           <View style={{ ...layout.flexRow }}>
-            <View>
+            <View style={{ marginBottom: 5 }}>
               <Image
                 source={{
                   uri: "https://i.ytimg.com/vi/VVF3GJPeB0I/maxresdefault.jpg",
